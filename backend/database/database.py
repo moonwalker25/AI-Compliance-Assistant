@@ -1,7 +1,16 @@
+import os
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL = "sqlite:///./compliance.db"
+
+DATABASE_PATH = os.getenv(
+    "SQLITE_DB_PATH",
+    "./compliance.db"
+)
+
+DATABASE_URL = f"sqlite:///{DATABASE_PATH}"
+
 
 engine = create_engine(
     DATABASE_URL,
@@ -13,6 +22,8 @@ SessionLocal = sessionmaker(
     autoflush=False,
     bind=engine
 )
+
+
 def get_db():
     db = SessionLocal()
 
