@@ -1,21 +1,51 @@
-# Node.js
-node_modules/
-dist/
+# =========================
+# Environment variables
+# =========================
+.env
+*.env
+!.env.example
 
+# =========================
 # Python
+# =========================
 venv/
+.venv/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# Environment variables
-.env
+# =========================
+# Node
+# =========================
+node_modules/
+dist/
+dist-ssr/
 
-# OS files
+# =========================
+# Logs
+# =========================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# OS
+# =========================
 .DS_Store
 Thumbs.db
 
-# VS Code settings (optional)
+# =========================
+# IDE / Editor
+# =========================
 .vscode/
+.idea/
 
-# Logs
-*.log
+# =========================
+# Python cache / test
+# =========================
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

@@ -1,20 +1,16 @@
-import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Chat from "./pages/Chat";
+import Admin from "./pages/Admin";
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    fetch("http://127.0.0.1:8000/")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message))
-      .catch(console.error);
-  }, []);
-
   return (
-    <div style={{ padding: "40px" }}>
-      <h1>AI Compliance Assistant</h1>
-      <h2>{message}</h2>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/chat" element={<Chat />} />
+      <Route path="/admin" element={<Admin />} />
+    </Routes>
   );
 }
 
